@@ -38,7 +38,7 @@ h1 {
 .header_nav {
     display: block;
     background-color: inherit;
-    height: 88px;
+    height: inherit;
 }
 
 .header_nav-links {
@@ -48,7 +48,7 @@ h1 {
     overflow: hidden;
     width: 100%;
     background-color: inherit;
-    height: 88px;
+    height: inherit;
 }
 
 .header__nav-links-element {
@@ -57,7 +57,7 @@ h1 {
     line-height: inherit;
     display: block;
     background-color: inherit;
-    height: 88px;
+    height: inherit;
 }
 
 .header__nav-links-element img {
