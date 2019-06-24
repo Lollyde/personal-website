@@ -101,7 +101,7 @@ table tbody:first-child {
     height: 35px;
     display: block;
     background-color: inherit;
-    padding: 16px
+    padding: 16px;
 }
 
 .header__nav-links-element:hover {
