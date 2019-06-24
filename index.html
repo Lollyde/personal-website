@@ -10,6 +10,7 @@
     <meta property="og:site_name" content="lollyde.online">
     <meta property="og:description" content="My personal website.">
     <link href="./style.css" type="text/css" rel="stylesheet">
+    <script src='./js/particles.js'></script>
     <link rel="icon" href="./favicon.ico">
 </head>
 <body>
@@ -52,14 +53,19 @@
             </ul>
         </nav>
     </header>
-    <div class="content">
-        <h1> Hello. </h1>
-        <div class="description">
-            <p>I'm Lily. I'm a developer currently living in germany.</p>
-            <p>I mainly focus on desktop applications, though I'm learning webdev and am willing to learn pretty much anything.</p>
-            <p>I am also an avid Twitch viewer and moderator.</p>
-            <p>Welcome to my site!</p>
+    <div id="particle_container">
+        <div class="content_wrapper">
+            <div class="content">
+                <h1> Hello. </h1>
+                <div class="description">
+                    <p>I'm Lily. I'm a developer currently living in germany.</p>
+                    <p>I mainly focus on desktop applications, though I'm learning webdev and am willing to learn pretty much anything.</p>
+                    <p>I am also an avid Twitch viewer and moderator.</p>
+                    <p>Welcome to my site!</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<script>particlesJS.load('particle_container', 'particles-config.json')</script>
 </html>

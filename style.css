@@ -1,4 +1,4 @@
-* {
+html {
     background-color: #1e1e1e;
     color: lightgrey;
 }
@@ -41,10 +41,10 @@ table tbody:first-child {
 
 .header {
     border-top: 5px solid rgba(0, 187, 212, 0.8);
-    position: fixed;
     height: 67px;
     width: 100%;
-    background-color: #585858;
+    background-color: #3b3b3b;
+    z-index: 20;
 }
 
 .header_nav {
@@ -118,9 +118,19 @@ table tbody:first-child {
     font-size: 120%;
 }
 
+.content_wrapper {
+    right: 50%;
+    padding-top: 5%;
+    position: absolute;
+}
+
 .content {
+    background-color: rgba(0,0,0,0);
+    z-index: 10;
     text-align: center;
     padding: 5px;
+    position: relative;
+    right: -50%;
 }
 
 .description {
@@ -199,6 +209,11 @@ table tbody:first-child {
 #menuToggle input:checked ~ ul
 {
     transform: none;
+}
+
+#particle_container {
+    z-index: 1;
+    position: relative;
 }
 
 @media only screen and (max-width: 660px) {

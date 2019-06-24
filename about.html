@@ -10,6 +10,7 @@
     <meta property="og:site_name" content="lollyde.online">
     <meta property="og:description" content="My personal website.">
     <link href="./style.css" type="text/css" rel="stylesheet">
+    <script src='./js/particles.js'></script>
 	<link rel="icon" href="./favicon.ico">
 </head>
 <body>
@@ -52,13 +53,19 @@
             </ul>
         </nav>
     </header>
-    <div class="content">
-        <h1>About</h1>
-        <div class="description">
-            <p>This site was built from scratch in VSCode</a></p>
-            <p>Icons made by <a href="https://3v.fi">3v</a></p>
-            <p>This website is hosted on my own server with Nginx.</p>
+    <div id="particle_container">
+        <div class="content_wrapper">
+            <div class="content">
+                <h1>About</h1>
+                <div class="description">
+                    <p>This site was built from scratch in VSCode</a></p>
+                    <p>Icons made by <a href="https://3v.fi">3v</a></p>
+                    <p>Background made using a slightly modified version of <a href="https://vincentgarreau.com/particles.js/">particles.js</a></p>
+                    <p>This website is hosted on my own server with Nginx.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<script>particlesJS.load('particle_container', 'particles-config.json')</script>
 </html>
