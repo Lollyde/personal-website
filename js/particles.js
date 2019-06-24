@@ -13,7 +13,7 @@ var pJS = function(tag_id, params){
     
     function calc_flag_breaks(){
         for(i = 0; i<4; i++) {
-            trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5)
+          trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5);
         }
     };
   /* particles.js variables with default values */
@@ -159,7 +159,6 @@ var pJS = function(tag_id, params){
   };
 
   var pJS = this.pJS;
-  calc_flag_breaks();
 
   /* params settings */
   if(params){
@@ -211,6 +210,7 @@ var pJS = function(tag_id, params){
 
   pJS.fn.canvasInit = function(){
     pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
+    calc_flag_breaks();
   };
 
   pJS.fn.canvasSize = function(){
@@ -710,8 +710,8 @@ var pJS = function(tag_id, params){
 
       var opacity_line = pJS.particles.line_linked.opacity - (dist / (1/pJS.particles.line_linked.opacity)) / pJS.particles.line_linked.distance;
 
-      if(opacity_line > 0){        
-        
+      if(opacity_line > 0){
+
         /* style */
         h = p1.y;
         if(h > pJS.canvas.h/2){

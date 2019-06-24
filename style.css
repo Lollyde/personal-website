@@ -45,6 +45,7 @@ table tbody:first-child {
     width: 100%;
     background-color: #3b3b3b;
     z-index: 20;
+    position: fixed;
 }
 
 .header_nav {
@@ -119,8 +120,7 @@ table tbody:first-child {
 }
 
 .content_wrapper {
-    right: 50%;
-    padding-top: 5%;
+    left: 50%;
     position: absolute;
 }
 
@@ -130,7 +130,7 @@ table tbody:first-child {
     text-align: center;
     padding: 5px;
     position: relative;
-    right: -50%;
+    left: -50%;
 }
 
 .description {
@@ -213,7 +213,10 @@ table tbody:first-child {
 
 #particle_container {
     z-index: 1;
-    position: relative;
+    position: fixed;
+    margin-top: 72px;
+    height: calc(100% - 72px);
+    width: 100%;
 }
 
 @media only screen and (max-width: 660px) {
@@ -225,7 +228,7 @@ table tbody:first-child {
     #burger_menu {
         float: right;
         height: inherit;
-        display: block;
+        display: none; /* TODO: fix mobile version (yikes)*/
         background-color: inherit;
     }
 
