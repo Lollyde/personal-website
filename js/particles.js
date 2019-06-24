@@ -10,8 +10,32 @@
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
-
+    
+    function calc_flag_breaks(){
+        for(i = 0; i<4; i++) {
+            trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5)
+        }
+    };
   /* particles.js variables with default values */
+
+  trans = {
+    blue: {
+        r: '79',
+        g: '165',
+        b: '194'
+    },
+    pink: {
+        r: '245',
+        g: '135',
+        b: '172'
+    },
+    white: {
+        r: '249',
+        g: '251',
+        b: '252'
+    }
+  }
+  trans_flag_breaks = [];
   this.pJS = {
     canvas: {
       el: canvas_el,
@@ -135,6 +159,7 @@ var pJS = function(tag_id, params){
   };
 
   var pJS = this.pJS;
+  calc_flag_breaks();
 
   /* params settings */
   if(params){
@@ -205,6 +230,7 @@ var pJS = function(tag_id, params){
             pJS.canvas.w *= pJS.canvas.pxratio;
             pJS.canvas.h *= pJS.canvas.pxratio;
           }
+          calc_flag_breaks();
 
           pJS.canvas.el.width = pJS.canvas.w;
           pJS.canvas.el.height = pJS.canvas.h;
@@ -687,7 +713,17 @@ var pJS = function(tag_id, params){
       if(opacity_line > 0){        
         
         /* style */
-        var color_line = pJS.particles.line_linked.color_rgb_line;
+        h = p1.y;
+        if(h > pJS.canvas.h/2){
+            h = pJS.canvas.h - p1.y;
+        }
+        if(h < trans_flag_breaks[0]){
+            color_line = trans.blue;
+        }else if(h < trans_flag_breaks[1]) {
+            color_line = trans.pink;
+        }else {
+            color_line = trans.white;
+        }
         pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
         pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
         //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
