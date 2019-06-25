@@ -1071,7 +1071,17 @@ var pJS = function(tag_id, params){
         if(opacity_line > 0){
 
           /* style */
-          var color_line = pJS.particles.line_linked.color_rgb_line;
+          h = p.y;
+          if(h > pJS.canvas.h/2){
+            h = pJS.canvas.h - p.y;
+          }
+          if(h < trans_flag_breaks[0]){
+            color_line = trans.blue;
+          }else if(h < trans_flag_breaks[1]) {
+            color_line = trans.pink;
+          }else {
+            color_line = trans.white;
+          }
           pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
           pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
           //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
