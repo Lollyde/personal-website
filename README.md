@@ -1,5 +1,7 @@
 # My personal website
-Nothing huge, just a very basic static page. Built with Vue.js
+Nothing huge, just a very basic static page. Built with [Vue.js](https://vuejs.org/).
+
+Hosted at [lollyde.online](https://lollyde.online/).
 
 ## Project setup
 ```
