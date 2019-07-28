@@ -61,22 +61,22 @@ export default {
         Internal: [
           {
             to: "/",
-            text: "Home",
-            active: true
+            text: "home",
+            active: false
           },
           {
             to: "/portfolio",
-            text: "Portfolio",
+            text: "portfolio",
             active: false
           },
           {
             to: "/contact",
-            text: "Contact",
+            text: "contact",
             active: false
           },
           {
             to: "/about",
-            text: "About",
+            text: "about",
             active: false
           }
         ]
@@ -89,6 +89,14 @@ export default {
               element.active = element.text === text;
           });
       }
+  },
+  beforeMount: function(){
+    var tmp = this.$route.path.split('/')[1];
+    if(tmp.length === 0){
+      this.linkClicked("home");
+    }else{
+      this.linkClicked(tmp);
+    }
   }
 }
 </script>
