@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import NotFound from "./components/NotFound";
 import VueRouter from 'vue-router';
 
 const router = new VueRouter({
@@ -22,7 +23,8 @@ const router = new VueRouter({
     { path: '/', component: Home },
     { path: '/portfolio', component: Portfolio },
     { path: '/contact', component: Contact },
-    { path: '/about', component: About }
+    { path: '/about', component: About },
+    { path: '*', component: NotFound }
   ]
 })
 
