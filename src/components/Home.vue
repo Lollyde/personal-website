@@ -1,15 +1,15 @@
 <template>
-  <div class="content_wrapper">
-            <div class="content">
-                <h1> Hello. </h1>
-                <div class="description">
-                    <p>I'm Lily. I'm a developer currently living in germany.</p>
-                    <p>I mainly focus on desktop applications, though I'm learning webdev and am willing to learn pretty much anything.</p>
-                    <p>I am also an avid Twitch viewer and moderator.</p>
-                    <p>Welcome to my site!</p>
-                </div>
+    <div class="content_wrapper">
+        <div class="content">
+            <h1> Hello. </h1>
+            <div class="description">
+                <p>I'm Lily. I'm a developer currently living in germany.</p>
+                <p>I mainly focus on desktop applications, though I'm learning webdev and am willing to learn pretty much anything.</p>
+                <p>I am also an avid Twitch viewer and moderator.</p>
+                <p>Welcome to my site!</p>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
