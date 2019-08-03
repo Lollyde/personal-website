@@ -20,5 +20,6 @@ export default {
         position: fixed;
         height: calc(100% - 72px);
         width: 100%;
+        margin-top: 72px;
     }
 </style>

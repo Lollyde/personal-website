@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Header from "./components/Header";
-import Flag from "./components/Flag";
-import Home from "./components/Home";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import NotFound from "./components/NotFound";
+import Header from "./components/parts/Header";
+import Flag from "./components/parts/Flag";
+import Home from "./components/pages/Home";
+import Portfolio from "./components/pages/Portfolio";
+import Contact from "./components/pages/Contact";
+import About from "./components/pages/About";
+import NotFound from "./components/pages/NotFound";
 import VueRouter from 'vue-router';
 
 const router = new VueRouter({

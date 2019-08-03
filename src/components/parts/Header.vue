@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import HeaderLink from "./HeaderLink";
-import HeaderLinkExternal from "./HeaderLinkExternal";
+import HeaderLink from "./headerparts/HeaderLink";
+import HeaderLinkExternal from "./headerparts/HeaderLinkExternal";
 
 export default {
   name: 'Header',
@@ -112,6 +112,7 @@ export default {
         width: 100%;
         background-color: #3b3b3b;
         z-index: 20;
+        position: fixed;
     }
 
     .header_nav {
