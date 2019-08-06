@@ -25,6 +25,7 @@ export default {
         left: 50%;
         position: absolute;
         pointer-events: none;
+        width: 50%;
     }
     .content {
         background-color: rgba(0,0,0,0);
