@@ -10,7 +10,7 @@
 import Header from "./components/parts/Header";
 import Flag from "./components/parts/Flag";
 import Content from "./components/parts/Content";
-import VueRouter from 'vue-router';
+import VueRouter from "vue-router";
 
 const component_data = {
   home_data: {
@@ -48,62 +48,95 @@ const component_data = {
   },
   notfound_data: {
     header: `404`,
-    content: [
-      `Requested page wasnt found :(`
-    ]
+    content: [`Requested page wasnt found :(`]
   }
-
 };
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: __dirname,
   routes: [
-    { path: '/', component: Content, props: () => ({ content: component_data.home_data.content, header: component_data.home_data.header }) },
-    { path: '/portfolio', component: Content, props: () => ({ content: component_data.portfolio_data.content, header: component_data.portfolio_data.header }) },
-    { path: '/contact', component: Content, props: () => ({ content: component_data.contact_data.content, header: component_data.contact_data.header }) },
-    { path: '/about', component: Content, props: () => ({ content: component_data.about_data.content, header: component_data.about_data.header }) },
-    { path: '*', component: Content, props: () => ({ content: component_data.notfound_data.content, header: component_data.notfound_data.header }) }
+    {
+      path: "/",
+      component: Content,
+      props: () => ({
+        content: component_data.home_data.content,
+        header: component_data.home_data.header
+      })
+    },
+    {
+      path: "/portfolio",
+      component: Content,
+      props: () => ({
+        content: component_data.portfolio_data.content,
+        header: component_data.portfolio_data.header
+      })
+    },
+    {
+      path: "/contact",
+      component: Content,
+      props: () => ({
+        content: component_data.contact_data.content,
+        header: component_data.contact_data.header
+      })
+    },
+    {
+      path: "/about",
+      component: Content,
+      props: () => ({
+        content: component_data.about_data.content,
+        header: component_data.about_data.header
+      })
+    },
+    {
+      path: "*",
+      component: Content,
+      props: () => ({
+        content: component_data.notfound_data.content,
+        header: component_data.notfound_data.header
+      })
+    }
   ]
-})
-
+});
 
 export default {
   router,
-  name: 'app',
+  name: "app",
   components: {
     Header,
     Flag
   }
-}
+};
 </script>
 
 <style>
-  html {
-    background-color: #1e1e1e;
-    color: lightgrey;
-  }
+html {
+  background-color: #1e1e1e;
+  color: lightgrey;
+}
 
-  body {
-    margin: 0;
-  }
+body {
+  margin: 0;
+}
 
-  a {
-    text-decoration: none;
-    color: #42a5f5;
-    background: inherit;
-    pointer-events: all;
-  }
+a {
+  text-decoration: none;
+  color: #42a5f5;
+  background: inherit;
+  pointer-events: all;
+}
 
-  h1 {
-    color: #00B2D4;
-    margin-top: 150px;
-    text-transform: capitalize;
-    font-size: 400%;
-  }
+h1 {
+  color: #00b2d4;
+  margin-top: 150px;
+  text-transform: capitalize;
+  font-size: 400%;
+}
 
-  table, th, td {
-    border: 1px solid rgba(0, 187, 212, 0.8);
-    border-collapse: collapse;
-  }
+table,
+th,
+td {
+  border: 1px solid rgba(0, 187, 212, 0.8);
+  border-collapse: collapse;
+}
 </style>
