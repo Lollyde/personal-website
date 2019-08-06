@@ -4,6 +4,8 @@
 </template>
 
 <script>
+/* fix eslint 'particlesJS' is not defined error */
+/* global particlesJS */
 export default {
   name: 'Flag',
   components: {
