@@ -1,26 +1,24 @@
 <template>
-  <div>
-    <header class="header">
-        <nav class="header_nav">
-            <ul class="header_bars">
-                <li id="left_header">
-                    <ul class="header_nav-links">
-                        <li v-for="link in HeaderLinks.Internal" v-bind:key="link.text">
-                            <HeaderLink v-bind:to="link.to" v-bind:text="link.text" v-bind:active="link.active" v-on:load-link="linkClicked"/>
-                        </li>
-                    </ul>
-                </li>
-                <li id="right_header">
-                    <ul class="header_nav-links">
-                        <li v-for="link in HeaderLinks.External" v-bind:key="link.alt">
-                            <HeaderLinkExternal v-bind:href="link.href" v-bind:alt="link.alt" v-bind:img="link.img"/>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-  </div>
+  <header class="header">
+      <nav class="header_nav">
+          <ul class="header_bars">
+              <li id="left_header">
+                  <ul class="header_nav-links">
+                      <li v-for="link in HeaderLinks.Internal" v-bind:key="link.text">
+                          <HeaderLink v-bind:to="link.to" v-bind:text="link.text" v-bind:active="link.active" v-on:load-link="linkClicked"/>
+                      </li>
+                  </ul>
+              </li>
+              <li id="right_header">
+                  <ul class="header_nav-links">
+                      <li v-for="link in HeaderLinks.External" v-bind:key="link.alt">
+                          <HeaderLinkExternal v-bind:href="link.href" v-bind:alt="link.alt" v-bind:img="link.img"/>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </nav>
+  </header>
 </template>
 
 <script>
