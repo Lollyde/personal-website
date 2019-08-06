@@ -1,14 +1,14 @@
 <template>
-  <div class="content_wrapper">
-            <div class="content">
-                <h1>Contact</h1>
-                <div class="description">
-                    <p class="pad-below">I can be reached via a number of ways:</p>
-                    <p>Email: <a href="mailto:Lily@lollyde.online">Lily@lollyde.online</a></p>
-                    <p>Twitter: <a href="https://twitter.com/lollyde_">lollyde_</a></p>
-                </div>
+    <div class="content_wrapper">
+        <div class="content">
+            <h1>Contact</h1>
+            <div class="description">
+                <p class="pad-below">I can be reached via a number of ways:</p>
+                <p>Email: <a href="mailto:Lily@lollyde.online">Lily@lollyde.online</a></p>
+                <p>Twitter: <a href="https://twitter.com/lollyde_">lollyde_</a></p>
             </div>
         </div>
+    </div>
 </template>
 
 <script>

@@ -1,13 +1,13 @@
 <template>
-  <div class="content_wrapper">
-            <div class="content">
-                <h1>Portfolio</h1>
-                <div class="description">
-                    <p>Most of my projects can be found on <a href="https://github.com/lollyde">github</a>.</p>
-                    <p>I will be adding more as I finish projects.</p>
-                </div>
+    <div class="content_wrapper">
+        <div class="content">
+            <h1>Portfolio</h1>
+            <div class="description">
+                <p>Most of my projects can be found on <a href="https://github.com/lollyde">github</a>.</p>
+                <p>I will be adding more as I finish projects.</p>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
