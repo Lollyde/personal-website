@@ -125,18 +125,4 @@ a {
   background: inherit;
   pointer-events: all;
 }
-
-h1 {
-  color: #00b2d4;
-  margin-top: 150px;
-  text-transform: capitalize;
-  font-size: 400%;
-}
-
-table,
-th,
-td {
-  border: 1px solid rgba(0, 187, 212, 0.8);
-  border-collapse: collapse;
-}
 </style>

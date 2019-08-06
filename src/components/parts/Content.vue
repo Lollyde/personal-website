@@ -32,6 +32,15 @@ export default {
   padding: 5px;
   position: relative;
   left: -50%;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  color: #00b2d4;
+  margin-top: 150px;
+  text-transform: capitalize;
+  font-size: 400%;
+  align-self: center;
 }
 .description {
   font-size: 120%;
