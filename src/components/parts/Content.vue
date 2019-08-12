@@ -18,6 +18,9 @@ export default {
 </script>
 
 <style>
+p{
+  pointer-events: all;
+}
 .content_wrapper {
   left: 50%;
   position: absolute;
@@ -41,6 +44,7 @@ h1 {
   text-transform: capitalize;
   font-size: 400%;
   align-self: center;
+  pointer-events: all;
 }
 .description {
   font-size: 120%;
