@@ -34,7 +34,8 @@ const component_data = {
     content: [
       `I can be reached via a number of ways:`,
       `Email: <a href="mailto:Lily@lollyde.online">Lily@lollyde.online</a>`,
-      `Twitter: <a href="https://twitter.com/lollyde_">lollyde_</a>`
+      `Twitter: <a href="https://twitter.com/lollyde_">lollyde_</a>`,
+      `Discord: Lollyde#1337`
     ]
   },
   about_data: {
