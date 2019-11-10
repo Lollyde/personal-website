@@ -46,6 +46,10 @@ h1 {
   align-self: center;
   pointer-events: all;
 }
+h2 {
+  color: #00b2d4;
+  text-transform: capitalize;
+}
 .description {
   font-size: 120%;
   color: lightgray;
