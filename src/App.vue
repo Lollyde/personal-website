@@ -139,6 +139,5 @@ a {
   text-decoration: none;
   color: #42a5f5;
   background: inherit;
-  pointer-events: all;
 }
 </style>
