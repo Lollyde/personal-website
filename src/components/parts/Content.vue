@@ -39,13 +39,13 @@ p{
   background-color: rgba(0, 0, 0, 0);
   z-index: 10;
   text-align: center;
-  padding: 5px;
   position: relative;
-  left: -50%;
+  left: -100%;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 10px);
+  height: 100%;
   overflow: hidden;
+  width: 200%;
 }
 h1 {
   color: #00b2d4;
