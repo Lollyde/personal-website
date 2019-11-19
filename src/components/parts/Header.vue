@@ -196,4 +196,10 @@ export default {
 #right_header {
   float: right;
 }
+
+@media only screen and (max-width: 625px){
+  #right_header{
+    visibility: hidden;
+  }
+}
 </style>
