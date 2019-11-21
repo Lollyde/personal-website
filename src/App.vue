@@ -48,7 +48,7 @@ const component_data = {
     header: `Contact`,
     content: [
       `I can be reached via a number of ways:`,
-      `Email: <a href="mailto:Lily@lollyde.online">Lily@lollyde.online</a>`,
+      `Email: <a href="mailto:Lily@lollyde.online">Lily@lollyde.online</a> or <a href="mailto:lollyde@protonmail.com">lollyde@protonmail.com</a>`,
       `Twitter: <a href="https://twitter.com/lollyde_">lollyde_</a>`,
       `Discord: Lollyde#1337`
     ]
