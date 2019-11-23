@@ -19,3 +19,14 @@ export default {
   methods: {}
 };
 </script>
+<style>
+.header__nav-links-element-text {
+  padding-top: 20px !important;
+  padding-bottom: 29px !important;
+  height: 20% !important;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+  font-size: 120%;
+}
+</style>

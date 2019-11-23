@@ -153,42 +153,6 @@ export default {
   height: inherit;
 }
 
-.header__nav-links-element {
-  text-transform: capitalize;
-  text-align: center;
-  line-height: inherit;
-  display: block;
-  background-color: inherit;
-  height: inherit;
-}
-
-.header__nav-links-element img {
-  padding-top: 0;
-  height: inherit;
-  background-color: inherit;
-  color: lightgrey;
-}
-
-.header__nav-links-element a {
-  height: 35px;
-  display: block;
-  background-color: inherit;
-  padding: 16px;
-}
-
-.header__nav-links-element:hover {
-  background-color: #101010;
-}
-
-.header__nav-links-element-text {
-  padding-top: 20px !important;
-  padding-bottom: 29px !important;
-  height: 20% !important;
-  text-transform: capitalize;
-  text-decoration: none;
-  color: white;
-  font-size: 120%;
-}
 #left_header {
   float: left;
 }
