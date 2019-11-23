@@ -11,11 +11,11 @@ var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
     
-    function calc_flag_breaks(){
-        for(i = 0; i<4; i++) {
-          trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5);
-        }
-    };
+  function calc_flag_breaks(){
+    for(i = 0; i<4; i++) {
+      trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5);
+    }
+  };
   /* particles.js variables with default values */
 
   trans = {
