@@ -16,6 +16,52 @@ var pJS = function(tag_id, params){
       trans_flag_breaks[i] = Math.floor(pJS.canvas.h * (1+i) / 5);
     }
   };
+
+  var cells = [];
+  var particles_initialized = false;
+
+  function init_cells() {
+    if (pJS.particles.line_linked.distance === 0) return;
+    var w_cell_count = Math.ceil(pJS.canvas.w / pJS.particles.line_linked.distance*2) +1;
+    var h_cell_count = Math.ceil(pJS.canvas.h / pJS.particles.line_linked.distance*2) +1;
+    cells = new Array(w_cell_count);
+    for (var i = 0; i < cells.length; i++) {
+      cells[i] = new Array(h_cell_count);
+      for (var j = 0; j < cells[i].length; j++){
+        cells[i][j] = new cell();
+      }
+    }
+
+    update_cells();
+  }
+
+  function update_cells(){
+    particles_initialized = false;
+  }
+
+  function calc_cell_from_coord(w,h) {
+    var x = Math.ceil(w / pJS.particles.line_linked.distance);
+    var y = Math.ceil(h / pJS.particles.line_linked.distance);
+    return {x:x,y:y}
+  }
+
+  class cell {
+    constructor(){
+      this.data = [];
+    }
+
+    addParticleID(id) {
+      if (!this.hasParticleID(id)) this.data[this.data.length] = id;
+    }
+
+    hasParticleID(id) {
+      return this.data.includes(id);
+    }
+
+    removeParticleID(id) {
+      this.data = this.data.filter(function (e){return e != id});
+    }
+  }
   /* particles.js variables with default values */
 
   trans = {
@@ -211,6 +257,7 @@ var pJS = function(tag_id, params){
   pJS.fn.canvasInit = function(){
     pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
     calc_flag_breaks();
+    init_cells();
   };
 
   pJS.fn.canvasSize = function(){
@@ -231,6 +278,7 @@ var pJS = function(tag_id, params){
             pJS.canvas.h *= pJS.canvas.pxratio;
           }
           calc_flag_breaks();
+          init_cells();
 
           pJS.canvas.el.width = pJS.canvas.w;
           pJS.canvas.el.height = pJS.canvas.h;
@@ -279,6 +327,9 @@ var pJS = function(tag_id, params){
     /* position */
     this.x = position ? position.x : Math.random() * pJS.canvas.w;
     this.y = position ? position.y : Math.random() * pJS.canvas.h;
+
+    this.cell = calc_cell_from_coord(this.x, this.y);
+    
 
     /* check position  - into the canvas */
     if(this.x > pJS.canvas.w - this.radius*2) this.x = this.x - this.radius;
@@ -531,6 +582,13 @@ var pJS = function(tag_id, params){
 
   pJS.fn.particlesUpdate = function(){
 
+    if (!particles_initialized){
+      for(var i = 0; i < pJS.particles.array.length; i++){
+        var p = pJS.particles.array[i];
+        cells[p.cell.x][p.cell.y].addParticleID(i);
+      }
+      particles_initialized = true;
+    }
     for(var i = 0; i < pJS.particles.array.length; i++){
 
       /* the particle */
@@ -551,6 +609,12 @@ var pJS = function(tag_id, params){
         p.y += p.vy * ms;
       }
 
+      var newcell = calc_cell_from_coord(p.x, p.y);
+      if(newcell.y != p.cell.y || newcell.x != p.cell.x){
+        cells[p.cell.x][p.cell.y].removeParticleID(i);
+        p.cell = newcell;
+        cells[p.cell.x][p.cell.y].addParticleID(i);
+      }
       /* change opacity status */
       if(pJS.particles.opacity.anim.enable) {
         if(p.opacity_status == true) {
@@ -634,24 +698,34 @@ var pJS = function(tag_id, params){
 
       /* interaction auto between particles */
       if(pJS.particles.line_linked.enable || pJS.particles.move.attract.enable){
-        for(var j = i + 1; j < pJS.particles.array.length; j++){
-          var p2 = pJS.particles.array[j];
-
-          /* link particles */
-          if(pJS.particles.line_linked.enable){
-            pJS.fn.interact.linkParticles(p,p2);
+        
+        var list = [];
+        for (var j = p.cell.x - 2; j < p.cell.x + 2; j++){
+          for (var k = p.cell.y - 2; k < p.cell.y + 2; k++){
+            if(j< cells.length && j >= 0 && k < cells[0].length && k>=0){
+              var toconcat = cells[j][k].data;;
+              list = list.concat(toconcat);
+            }
           }
+        }
+        for (j = 0; j < list.length; j++){
+          if(list[j] > i){
+            p2 = pJS.particles.array[list[j]];
+            /* link particles */
+            if(pJS.particles.line_linked.enable){
+              pJS.fn.interact.linkParticles(p,p2);
+            }
 
-          /* attract particles */
-          if(pJS.particles.move.attract.enable){
-            pJS.fn.interact.attractParticles(p,p2);
+            /* attract particles */
+            if(pJS.particles.move.attract.enable){
+              pJS.fn.interact.attractParticles(p,p2);
+            }
+          
+            /* bounce particles */
+            if(pJS.particles.move.bounce){
+              pJS.fn.interact.bounceParticles(p,p2);
+            }
           }
-
-          /* bounce particles */
-          if(pJS.particles.move.bounce){
-            pJS.fn.interact.bounceParticles(p,p2);
-          }
-
         }
       }
 
