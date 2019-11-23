@@ -19,7 +19,7 @@
             <li v-for="link in HeaderLinks.External" v-bind:key="link.alt">
               <HeaderLinkExternal
                 v-bind:href="link.href"
-                v-bind:alt="link.alt"
+                v-bind:title="link.title"
                 v-bind:img="link.img"
               />
             </li>
@@ -46,22 +46,22 @@ export default {
         External: [
           {
             href: "https://github.com/lollyde",
-            alt: "Github",
+            title: "Github",
             img: "/svg/github.svg"
           },
           {
             href: "https://steamcommunity.com/id/lollyde3/",
-            alt: "Steam",
+            title: "Steam",
             img: "/svg/steam.svg"
           },
           {
             href: "https://twitter.com/lollyde_",
-            alt: "Twitter",
+            title: "Twitter",
             img: "/svg/twitter.svg"
           },
           {
             href: "https://twitch.tv/lollyde",
-            alt: "Twitch",
+            title: "Twitch",
             img: "/svg/twitch.svg"
           }
         ],
