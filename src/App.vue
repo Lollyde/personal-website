@@ -57,7 +57,7 @@ const component_data = {
     header: `About`,
     content: [
       `This site was built using <a href="https://vuejs.org/">Vue.js</a>`,
-      `Background made using a slightly modified version of <a href="https://vincentgarreau.com/particles.js/">particles.js</a>`,
+      `Background made using a modified version of <a href="https://vincentgarreau.com/particles.js/">particles.js</a>`,
       `This website is hosted on my own server with <a href="https://nginx.org/">Nginx</a>`
     ]
   },
