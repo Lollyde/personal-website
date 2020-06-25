@@ -50,7 +50,7 @@ export default {
             img: "/svg/github.svg"
           },
           {
-            href: "https://steamcommunity.com/id/lollyde3/",
+            href: "https://steamcommunity.com/id/lollyde/",
             title: "Steam",
             img: "/svg/steam.svg"
           },
